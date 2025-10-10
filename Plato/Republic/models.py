@@ -16,10 +16,10 @@ class Movie(models.Model):
         ordering = ['genre']
 
 class Showtime(models.Model):
-        movie = models.ForeignKey(Movie)
-        hall = models.ForeignKey('Hall')
+        movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+        hall = models.ForeignKey('Hall', on_delete=models.CASCADE)
         start_time = models.DateTimeField()
-        price = models.DecimalField()
+        price = models.DecimalField(max_digits=8, decimal_places=2)
         
 
         class Meta:
@@ -28,7 +28,7 @@ class Showtime(models.Model):
 
 class Hall(models.Model):
      name = models.CharField(max_length=20)
-     capacity = models.DecimalField()
+     capacity = models.IntegerField()
      hall_type = models.BooleanField()
 
 
@@ -40,9 +40,9 @@ class Hall(models.Model):
 
 
 class Seat(models.Model):
-     hall = models.ForeignKey(Hall)
-     row_number = models.DecimalField()
-     seat_number = models.DecimalField()
+     hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
+     row_number = models.IntegerField()
+     seat_number = models.IntegerField()
      seat_type = models.BooleanField()
 
 
@@ -52,11 +52,11 @@ class Seat(models.Model):
 
 
 class Ticket(models.Model):
-     showtime = models.ForeignKey(Showtime)
-     seat = models.ForeignKey(Seat)
-     customer = models.ForeignKey('Customer')
+     showtime = models.ForeignKey(Showtime, on_delete=models.CASCADE)
+     seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
+     customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
      purchase_date= models.DateTimeField()
-     final_price = models.DecimalField()
+     final_price = models.DecimalField(max_digits=8, decimal_places=2)
      status = models.BooleanField()
 
      class Meta:

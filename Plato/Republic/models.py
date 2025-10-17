@@ -3,7 +3,7 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(max_length=30)
     genre = models.CharField(max_length=15)
-    duration = models.TimeField()
+    duration_minutes = models.IntegerField()
     age_rating = models.CharField(max_length=10)
     description = models.TextField()
 
@@ -29,21 +29,21 @@ class Showtime(models.Model):
 class Hall(models.Model):
      name = models.CharField(max_length=20)
      capacity = models.IntegerField()
-     hall_type = models.BooleanField()
+     is_hall_vip = models.BooleanField()
 
 
 
 
      class Meta:
           verbose_name_plural = 'Halls'
-          ordering = ['hall_type']
+          ordering = ['is_hall_vip']
 
 
 class Seat(models.Model):
      hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
      row_number = models.IntegerField()
      seat_number = models.IntegerField()
-     seat_type = models.BooleanField()
+     is_seat_vip = models.BooleanField()
 
 
      class Meta:
@@ -57,11 +57,11 @@ class Ticket(models.Model):
      customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
      purchase_date= models.DateTimeField()
      final_price = models.DecimalField(max_digits=8, decimal_places=2)
-     status = models.BooleanField()
+     is_paid = models.BooleanField()
 
      class Meta:
           verbose_name_plural = 'Tickets'
-          ordering = ['status']
+          ordering = ['is_paid']
 
 
 class Customer(models.Model):

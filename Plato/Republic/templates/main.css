@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+a {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+a:hover, a:active {
+   color: gold; 
+}

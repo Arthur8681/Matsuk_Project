@@ -1,9 +1,9 @@
 from django.db import models
 
 class Movie(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=100)
     genre = models.CharField(max_length=15)
-    duration_minutes = models.IntegerField()
+    duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
     description = models.TextField()
 

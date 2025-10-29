@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinema</title>
     <base href="/">
+    
      <link rel="stylesheet" href="{% static 'Republic/main.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
@@ -20,18 +21,21 @@
         <a href="">Gift Card</a>
         <a href="">Profile</a>
     </header>
-    
-    <div class="search-container">
-  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="8"></circle>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-  </svg>
+    <div class="ext">
+      <div class="search-container">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
         <input type="text" class="search-bar" placeholder="I'm looking for a movie with Brad Pitt">
+      </div>
     </div>
-    
+
     <div class="movie-poster">
       <a href="Schindlerslist.html">
-        <img src="{% static 'Republic/Schindlers.jpg' %}" alt="picture of a man holding girl's hand" style="width:286px;height:429px;"> 
+        <div>
+            <img class="ddd" src="{% static 'Republic/Schindlers.jpg' %}" alt="picture of a man holding girl's hand"> 
+        </div>
       </a>
     </div>
 </body>

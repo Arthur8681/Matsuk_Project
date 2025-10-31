@@ -43,21 +43,19 @@ a:hover, a:active {
    color: #FFEA00; 
 }
 
-.ext {
-    margin-top: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-}
+
 
 .search-container {
-    padding: 10px 15px;
+    position: relative;
+    top: -170px;
+    padding: 10px 20px;
     background-color: #3A3A3A;
     border-radius: 25px;
     overflow: hidden;
-    margin-bottom: 820px;
     width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-bar {
@@ -84,11 +82,36 @@ a:hover, a:active {
 }
 
 
-.ddd {
-    height: 200px;
-    width: 100px;
-    border-radius:50%;
+.picture1 {
+    height: 429px;
+    width: 286px;
+    border-radius:20px 20px 0 0;
 
 }
 
+.movie-poster {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 770px;
+    top: -60px;
+}
 
+.genre {
+    position: relative;
+    bottom: -228px;
+    height: 49px;
+    border-radius: 0 0 20px 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.genre:hover {
+    background-color:#FFEA00;
+}

@@ -89,13 +89,24 @@ a:hover, a:active {
 
 }
 
+
 .movie-poster {
     height: 478px;
     width: 286px;
     position: relative;
     right: 770px;
+    top: 680px;
+}
+
+.movie-poster2 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 390px;
     top: -60px;
 }
+
+
 
 .genre {
     position: relative;
@@ -115,3 +126,4 @@ a:hover, a:active {
 .genre:hover {
     background-color:#FFEA00;
 }
+

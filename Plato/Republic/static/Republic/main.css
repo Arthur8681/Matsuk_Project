@@ -47,8 +47,8 @@ a:hover, a:active {
 
 .search-container {
     position: relative;
-    top: -170px;
-    padding: 10px 20px;
+    top: 710px;
+    padding: 20px 20px;
     background-color: #3A3A3A;
     border-radius: 25px;
     overflow: hidden;
@@ -95,18 +95,72 @@ a:hover, a:active {
     width: 286px;
     position: relative;
     right: 770px;
-    top: 680px;
+    top: 880px;
 }
 
 .movie-poster2 {
     height: 478px;
     width: 286px;
     position: relative;
-    right: 390px;
-    top: -60px;
+    right: 430px;
+    top: 631px;
 }
 
+.movie-poster3 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: -246px;
+    top: 382px;
+}
 
+.movie-poster4 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: -582px;
+    top: 133px;
+}
+
+.movie-poster5 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 770px;
+    top: 400px;
+}
+
+.movie-poster6 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 430px;
+    top: 151px;
+}
+
+.movie-poster7 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 90px;
+    top: -98px;
+}
+
+.movie-poster8 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: -246px;
+    top: -347px;
+}
+
+.movie-poster9 {
+    height: 478px;
+    width: 286px;
+    position: relative;
+    right: 90px;
+    top: -1112px;
+}
 
 .genre {
     position: relative;

@@ -19,5 +19,7 @@ from django.urls import path
 from Republic import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main', views.main)
+    path('main', views.main),
+    path('schindlers', views.schindlers)
+
 ]

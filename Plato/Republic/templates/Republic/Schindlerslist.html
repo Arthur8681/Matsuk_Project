@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+    <base href="/">
+    
+     <link rel="stylesheet" href="{% static 'Republic/schindlers.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="main">Movies</a> 
+        <a href="">Showtimes</a>
+        <a href="">Events</a> 
+        <a href="">Discounts</a>
+        <a href="">Hall Rent</a>
+        <a href="">Gift Card</a>
+        <a href="">Profile</a>
+    </header>
+
+    <div class="movie-presentation">
+        <p class="movie-name">Schindler's List</p>
+        <p class="movie-info">1993 &middot R &middot 3h 15m</p>
+        <div class="media">
+            <img class="picture1" src="{% static 'Republic/Schindlers.jpg' %}" alt="picture of a man holding girl's hand">
+            <video width="737" height="429" controls autoplay muted>
+                <source src="{% static 'Republic/Schindlers.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+        </div>
+        <div class="division-line"></div>
+        <p class="movie-description">
+            In German-occupied Poland during World War II, 
+            industrialist Oskar Schindler gradually becomes concerned <br> for his Jewish workforce
+            after witnessing their persecution by the Nazis.
+        </p>     
+    </div>
+    <div class="ticket-button">
+        <a class="buy-button" href="">18:00</a>
+    </div>
+
+</body>

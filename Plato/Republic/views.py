@@ -32,3 +32,12 @@ def main(request):
         'Thing': Thing           
     }
     return render(request, 'Republic/Main.html', context)
+
+
+
+
+
+
+
+def schindlers(request):
+    return render(request, 'Republic/Schindlerslist.html')

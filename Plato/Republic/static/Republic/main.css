@@ -93,6 +93,7 @@ a:hover, a:active {
 .Poster-container {
     margin-top: 170px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     height: auto;
     gap: 30px;

@@ -30,166 +30,22 @@
         <input type="text" class="search-bar" placeholder="I'm looking for a movie with Brad Pitt">
       </div>
   <div class="Poster-container">
-    
+     {% for movie in autofill %}
     <div class="movie-poster">
-      <a href="schindlers">
+      <a href="{{movie.title}}">
         <div>
-            <img class="picture1" src="{% static 'Republic/Schindlers.jpg' %}" alt="picture of a man holding girl's hand"> 
+            <img class="picture1" src="{{movie.picture}}" alt="{{movie.description}}"> 
         </div>
       </a>
 
          <div class="genre">
            <p>
-             {{ Schindler.genre }}
+             {{ movie.genre }}
            </p>
          </div>
     </div>
-
-    <div class="movie-poster2">
-      <a href="Shawshankredemption.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/Shawshank.jpg' %}" alt="picture of a prisoner that run away"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Shawshank.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster9">
-      <a href="starwars.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/TheEmpire.jpg' %}" alt="picture of 5th episode of star wars"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Star_Wars.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster3">
-      <a href="Interstellar.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/Interstellar.jpg' %}" alt="picture of Matthew McConaughey"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Interstellar.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster4">
-      <a href="privateryan.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/Privateryan.jpg' %}" alt="picture of a few soldiers"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Private_Ryan.genre }}
-        </p>
-      </div>
-    </div>
+    {% endfor %}
     
-    <div class="movie-poster5">
-      <a href="whiplash.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/Whiplash.jpg' %}" alt="picture of whiplash"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Whiplash.genre }}
-        </p>
-      </div>
-    </div>
-
-  </div>
-  <div class="Poster-container2"> 
-    <div class="movie-poster6">
-      <a href="Terrifier.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/terrifier.jpg' %}" alt="picture of clown Art"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Terrifier.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster7">
-      <a href="it.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/It.jpg' %}" alt="picture of It"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ It.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster8">
-      <a href="halloween.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/Halloween.jpg' %}" alt="picture of Michael Myers"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Halloween.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster10">
-      <a href="1917.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/1917.jpg' %}" alt="picture of the First World War"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ WW.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster11">
-      <a href="ThereWillBeBlood.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/ThereWillBeBlood.jpg' %}" alt="picture of the oilman"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Oil.genre }}
-        </p>
-      </div>
-    </div>
-
-    <div class="movie-poster12">
-      <a href="TheThing.html">
-        <div>
-            <img class="picture1" src="{% static 'Republic/TheThing.jpg' %}" alt="picture of the Thing"> 
-        </div>
-      </a>
-      <div class="genre">
-        <p>
-          {{ Thing.genre }}
-        </p>
-      </div>
-    </div>
-
   </div>  
 </body>
 </html>

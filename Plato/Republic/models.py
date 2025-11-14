@@ -6,6 +6,7 @@ class Movie(models.Model):
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
     description = models.TextField()
+    picture = models.URLField()
 
     def __str__(self):
         return f"{self.title} {self.genre}"

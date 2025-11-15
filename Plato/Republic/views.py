@@ -15,5 +15,5 @@ def main(request):
 
 class MovieDetailView(DetailView):
     model = Movie
-    template_name = 'Republic/movie_detail.html'  # We'll create this template next
-    context_object_name = 'movie'  # This makes {{ movie }} available in the template
+    template_name = 'Republic/movie_detail.html'  
+    context_object_name = 'movie'  

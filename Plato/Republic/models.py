@@ -7,7 +7,7 @@ class Movie(models.Model):
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
     description = models.TextField()
-    poster = models.ImageField(upload_to='posters/')  # For uploading poster images
+    poster = models.ImageField(upload_to='posters/') 
     trailer = models.FileField(upload_to='trailers/', null=True, blank=True)
 
     def __str__(self):

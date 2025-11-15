@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Republic import views
+from Republic.views import MovieDetailView
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', views.main),
-    path('schindlers', views.schindlers)
-
-]
+    path('movie/<int:pk>/', MovieDetailView.as_view(), name='movie_detail'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -3,10 +3,12 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     genre = models.CharField(max_length=15)
+    release_year = models.IntegerField()
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
     description = models.TextField()
-    picture = models.URLField()
+    poster = models.ImageField(upload_to='posters/')  # For uploading poster images
+    trailer = models.FileField(upload_to='trailers/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.title} {self.genre}"

@@ -32,9 +32,9 @@
   <div class="Poster-container">
      {% for movie in autofill %}
     <div class="movie-poster">
-      <a href="{{movie.title}}">
+      <a href="{% url 'movie_detail' movie.pk %}">
         <div>
-            <img class="picture1" src="{{movie.picture}}" alt="{{movie.description}}"> 
+            <img class="picture1" src="{{movie.poster.url}}" alt="{{ movie.title }}"> 
         </div>
       </a>
 

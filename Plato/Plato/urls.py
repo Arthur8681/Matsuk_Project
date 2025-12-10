@@ -26,5 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', views.main),
     path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('genres/', views.genres_list, name='genres_list'),
+    path('genres/<int:genre_id>/', views.genre_detail, name='genre_detail'),
     path('movie/<int:pk>/', MovieDetailView.as_view(), name='movie_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

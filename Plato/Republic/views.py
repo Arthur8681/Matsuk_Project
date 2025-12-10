@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
 from django.views.generic import DetailView
 from django.views.generic import ListView
@@ -34,8 +34,22 @@ class SearchResultsView(ListView):
         query = self.request.GET.get('q')
         if query:
             queryset = Movie.objects.filter(
-                Q(title__icontains=query) | Q(genre__icontains=query)
-            )
+                Q(genres__name__icontains=query) | Q(title__icontains=query)
+                ).distinct()
 
             return queryset
         return Movie.objects.none()  
+    
+
+
+
+def genres_list(request):
+    genres = Genre.objects.all()
+    return render(request, 'Republic/genres.html', {'genres': genres})
+
+def genre_detail(request, genre_id):
+    genre = get_object_or_404(Genre, pk=genre_id)
+    movies = genre.movies.all()
+    tv_shows = genre.tv_shows.all()  
+    
+    return render(request, 'Republic/genre_detail.html', {'genre': genre, 'movies': movies, 'tv_shows': tv_shows})

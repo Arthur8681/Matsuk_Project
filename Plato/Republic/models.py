@@ -2,7 +2,8 @@ from django.db import models
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
-    genre = models.CharField(max_length=15)
+    genres = models.ManyToManyField('Genre', related_name='movies', blank=True)
+#     genre = models.CharField(max_length=15)
     release_year = models.IntegerField()
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
@@ -11,60 +12,44 @@ class Movie(models.Model):
     trailer = models.FileField(upload_to='trailers/', null=True, blank=True)
 
     def __str__(self):
-        return f"{self.title} {self.genre}"
+        return self.title
     
 
     class Meta:
         verbose_name_plural = 'Movies'
-        ordering = ['genre']
-
-class Showtime(models.Model):
-        movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-        hall = models.ForeignKey('Hall', on_delete=models.CASCADE)
-        start_time = models.DateTimeField()
-        price = models.DecimalField(max_digits=8, decimal_places=2)
-        
-
-        class Meta:
-             ordering = ['start_time']
+        ordering = ['title']
 
 
-class Hall(models.Model):
-     name = models.CharField(max_length=20)
-     capacity = models.IntegerField()
-     is_hall_vip = models.BooleanField()
+class TVShow(models.Model):
+    title = models.CharField(max_length=100)
+    genres = models.ManyToManyField('Genre', related_name='tv_shows', blank=True)
+#     genre = models.CharField(max_length=15)
+    release_year = models.IntegerField()
+    duration_minutes = models.IntegerField(default=1, null=True, blank=True)
+    age_rating = models.CharField(max_length=10)
+    description = models.TextField()
+    poster = models.ImageField(upload_to='posters/') 
+    trailer = models.FileField(upload_to='trailers/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+    
+
+    class Meta:
+        verbose_name_plural = 'Movies'
+        ordering = ['title']
 
 
+class Genre(models.Model):
+    name = models.CharField(max_length=50, unique=True)
 
+    def __str__(self):
+        return self.name
 
-     class Meta:
-          verbose_name_plural = 'Halls'
-          ordering = ['is_hall_vip']
+    class Meta:
+        verbose_name_plural = "Genres"
+        ordering = ['name']
 
-
-class Seat(models.Model):
-     hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
-     row_number = models.IntegerField()
-     seat_number = models.IntegerField()
-     is_seat_vip = models.BooleanField()
-
-
-     class Meta:
-          verbose_name_plural = 'Seats'
-          ordering = ['row_number']
-
-
-class Ticket(models.Model):
-     showtime = models.ForeignKey(Showtime, on_delete=models.CASCADE)
-     seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
-     customer = models.ForeignKey('Customer', on_delete=models.CASCADE)
-     purchase_date= models.DateTimeField()
-     final_price = models.DecimalField(max_digits=8, decimal_places=2)
-     is_paid = models.BooleanField()
-
-     class Meta:
-          verbose_name_plural = 'Tickets'
-          ordering = ['is_paid']
 
 
 class Customer(models.Model):

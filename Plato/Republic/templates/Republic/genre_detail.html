@@ -33,7 +33,7 @@
     </form>
 
   <div class="Poster-container">
-     {% for movie in autofill %}
+     {% for movie in movies %}
     <div class="movie-poster">
       <a href="{% url 'movie_detail' movie.pk %}">
         <div>
@@ -47,6 +47,8 @@
            </p>
          </div>
     </div>
+    {% empty %}
+    <p class="empty_search">No movies in this genre.</p>
     {% endfor %}
   </div>  
 </body>

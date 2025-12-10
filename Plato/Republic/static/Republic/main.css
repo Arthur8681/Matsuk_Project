@@ -199,3 +199,13 @@ a:hover, a:active {
     background-color:#FFEA00;
 }
 
+
+.empty_search {
+    margin-top: 200px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: x-large;
+
+}
+

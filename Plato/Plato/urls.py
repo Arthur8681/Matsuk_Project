@@ -20,9 +20,11 @@ from Republic import views
 from Republic.views import MovieDetailView
 from django.conf import settings
 from django.conf.urls.static import static
+from Republic.views import SearchResultsView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', views.main),
+    path('search/', SearchResultsView.as_view(), name='search_results'),
     path('movie/<int:pk>/', MovieDetailView.as_view(), name='movie_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

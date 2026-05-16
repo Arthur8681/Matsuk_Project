@@ -3,7 +3,6 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     genres = models.ManyToManyField('Genre', related_name='movies', blank=True)
-#     genre = models.CharField(max_length=15)
     release_year = models.IntegerField()
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)
@@ -23,7 +22,6 @@ class Movie(models.Model):
 class TVShow(models.Model):
     title = models.CharField(max_length=100)
     genres = models.ManyToManyField('Genre', related_name='tv_shows', blank=True)
-#     genre = models.CharField(max_length=15)
     release_year = models.IntegerField()
     duration_minutes = models.IntegerField(default=1, null=True, blank=True)
     age_rating = models.CharField(max_length=10)

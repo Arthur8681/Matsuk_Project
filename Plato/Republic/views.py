@@ -53,3 +53,9 @@ def genre_detail(request, genre_id):
     tv_shows = genre.tv_shows.all()  
     
     return render(request, 'Republic/genre_detail.html', {'genre': genre, 'movies': movies, 'tv_shows': tv_shows})
+
+
+
+
+def profile(request):
+    return render(request, 'Republic/profile.html')
